@@ -1,4 +1,4 @@
-exports.up = knex => knex.schema.createTable(knex, 'items', table => {
+exports.up = knex => knex.schema.createTable('items', table => {
   table
     .uuid('id')
     .notNullable()
@@ -28,7 +28,7 @@ exports.up = knex => knex.schema.createTable(knex, 'items', table => {
     .defaultTo(false)
 
   table
-    .int('stock')
+    .integer('stock')
     .notNullable()
 
   table.timestamp('createdAt').defaultTo(knex.fn.now())

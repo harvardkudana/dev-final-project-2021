@@ -14,7 +14,7 @@ exports.up = async knex => createTableIfNotExists(knex, 'users', table => {
 
   table.string('password').notNullable()
 
-  table.int('age').notNullable()
+  table.integer('age').notNullable()
 
   table.decimal('money').defaultTo(0)
 

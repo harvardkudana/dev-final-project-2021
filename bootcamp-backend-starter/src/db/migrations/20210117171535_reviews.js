@@ -1,4 +1,4 @@
-exports.up = knex => knex.schema.createTable(knex, 'reviews', table => {
+exports.up = knex => knex.schema.createTable('reviews', table => {
   table
     .uuid('id')
     .notNullable()
@@ -7,7 +7,7 @@ exports.up = knex => knex.schema.createTable(knex, 'reviews', table => {
 
   table.string('password').notNullable()
 
-  table.int('rating').notNullable()
+  table.integer('rating').notNullable()
 
   table.string('review').notNullable()
 

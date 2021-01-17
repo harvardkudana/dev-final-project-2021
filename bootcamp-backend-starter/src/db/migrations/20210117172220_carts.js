@@ -1,4 +1,4 @@
-exports.up = knex => knex.schema.createTable(knex, 'carts', table => {
+exports.up = knex => knex.schema.createTable('carts', table => {
   table
     .uuid('itemId')
     .references('items.id')

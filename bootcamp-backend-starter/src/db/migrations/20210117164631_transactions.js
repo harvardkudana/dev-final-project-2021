@@ -1,4 +1,4 @@
-exports.up = knex => knex.schema.createTable(knex, 'transactions', table => {
+exports.up = knex => knex.schema.createTable('transactions', table => {
   table
     .uuid('id')
     .notNullable()
