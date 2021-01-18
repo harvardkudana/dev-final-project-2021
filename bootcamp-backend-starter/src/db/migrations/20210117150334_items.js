@@ -14,7 +14,7 @@ exports.up = knex => knex.schema.createTable('items', table => {
     .notNullable()
 
   table
-    .string('description')
+    .string('description', 1000)
     .notNullable()
 
   table.string('tags')

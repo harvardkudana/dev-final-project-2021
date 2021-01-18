@@ -5,11 +5,9 @@ exports.up = knex => knex.schema.createTable('reviews', table => {
     .primary()
     .defaultTo(knex.raw('uuid_generate_v4()'))
 
-  table.string('password').notNullable()
-
   table.integer('rating').notNullable()
 
-  table.string('review').notNullable()
+  table.string('review', 1000).notNullable()
 
   table.uuid('itemId').references('items.id')
 

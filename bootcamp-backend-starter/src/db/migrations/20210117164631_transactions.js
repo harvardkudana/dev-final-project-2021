@@ -13,10 +13,6 @@ exports.up = knex => knex.schema.createTable('transactions', table => {
     .uuid('buyerId')
     .references('users.id')
 
-  table
-    .uuid('sellerId')
-    .references('users.id')
-
   table.timestamp('boughtAt').defaultTo(knex.fn.now())
 })
 

@@ -12,13 +12,18 @@ exports.up = async knex => createTableIfNotExists(knex, 'users', table => {
     .unique()
     .notNullable()
 
+  table
+    .string('username')
+    .unique()
+    .notNullable()
+    
   table.string('password').notNullable()
 
   table.integer('age').notNullable()
 
   table.decimal('money').defaultTo(0)
 
-  table.string('bio').defaultTo('Welcome!')
+  table.string('bio', 500).defaultTo('Welcome!')
 
   table
     .uuid('addressId')
