@@ -2,7 +2,7 @@ const casual = require('casual')
 const userData = require('./user')
 const itemData = require('./item')
 
-casual.define('item', (buyerId, itemId) => ({
+casual.define('review', (buyerId, itemId) => ({
   id: casual.uuid,
   buyerId,
   itemId,
@@ -17,7 +17,7 @@ const reviewData = []
 for (let i = 0; i < 20; ++i) {
   const userId = casual.random_element(userData).id
   const itemId = casual.random_element(itemData).id
-  reviewData.push(casual.item(userId, itemId))
+  reviewData.push(casual.review(userId, itemId))
 }
 
 module.exports = reviewData

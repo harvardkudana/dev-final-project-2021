@@ -17,8 +17,6 @@ exports.up = knex => knex.schema.createTable('items', table => {
     .string('description', 1000)
     .notNullable()
 
-  table.string('tags')
-
   table
     .decimal('price')
     .defaultTo(0)

@@ -5,7 +5,6 @@ casual.define('item', sellerId => ({
   id: casual.uuid,
   sellerId,
   name: casual.word,
-  tags: `${casual.word};${casual.word};${casual.word}`,
   price: Math.round(casual.double(from = 0, to = 1000) * 100) / 100,
   description: casual.sentence,
   soldOut: false,
